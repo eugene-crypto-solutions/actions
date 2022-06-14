@@ -3,5 +3,9 @@ description: rust build-and-tester
 runs:
   using: "composite"
   steps:
-    - run: "RUST_LOG=debug cargo build"
-    - run: "RUST_LOG=debug cargo test --workspace --all-features -- --nocapture"
+    - name: Build
+      run: "RUST_LOG=debug cargo build"
+      shell: bash
+    - name: Test
+      run: "RUST_LOG=debug cargo test --workspace --all-features -- --nocapture"
+      shell: bash
