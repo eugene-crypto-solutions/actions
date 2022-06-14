@@ -1,0 +1,6 @@
+name: lint-and-fmt
+descriptions: rust lint-and-formatter
+runs:
+  using: "composite"
+  steps:
+    - run: RUST_LOG=debug cargo clippy --workspace --all-features --all-targets -- -D warnings
